@@ -1,0 +1,68 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	
+	<title>Weather App</title>
+    <link rel="stylesheet" href="style.css" />
+    <meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="refresh" content="30">
+	
+	 <script src="https://kit.fontawesome.com/917045635e.js" crossorigin="anonymous"></script>
+
+</head>
+<body>
+ 	<div class="wrapper">
+ 		<header >
+ 			<i class="fa-solid fa-arrow-left return" onclick="goBackBtn()" style="margin-right:8px "></i>Weather App
+ 		</header>
+ 		<section class="input">
+ 			<p class="info-txt normal">Please enter a city name</p>
+
+ 			<div class="input-icons">
+ 			     <i class="fa-solid fa-arrow-right icon"  onclick="searchLocation()"></i>
+ 		    	<input id="location" type="text" name="city" placeholder ="Enter valid city" required  />
+ 		    </div>
+
+ 			<h2>or</h2>
+ 			<button id="button" onclick="showmyLocation()">Get Device Location</button>
+ 		</section>
+
+
+ 		<section class="weather-part showweather" style="border:1px solid black">
+ 		   <div class="image">
+ 		   	<img src=""  alt="cloud">
+ 		   </div>
+ 		  <div class="temp-details" >
+ 		  	 <div class="temp">
+ 		  	 	<i class="fa-solid fa-temperature-full"></i>
+	 		   	<span class="numb">135.89</span>
+	 		   	<span class="deg">°</span>
+ 		     </div>
+ 		   
+ 		    <div class="location">
+ 		    	<i class="fa-solid fa-location"></i>
+ 		    	<span class="loc">Tagbilaran City</span>
+ 		    </div>
+ 		   
+ 		     <div class="humidity">
+ 		    	<i class="fa-solid fa-droplet"></i>
+ 		   	 	<span class="hum">Clear Sky</span>
+ 		    </div>
+ 		      <div class="description">
+ 		     <i class="fa-solid fa-sun"></i>
+ 		   	 	<span class="desc">--</span>
+ 		     </div>
+ 		   
+
+ 		  </div>
+ 		</section>
+ 		
+ 	</div>
+
+	
+ <script src="main.js" type="text/javascript"></script>
+</body>
+</html>
