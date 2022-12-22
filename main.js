@@ -76,6 +76,7 @@ function weatherDetails(info){
 
         
         if(id==800){
+         
         	ico.src="http://openweathermap.org/img/wn/10d@2x.png";
         }
         else if(id==801){
@@ -85,7 +86,7 @@ function weatherDetails(info){
         	ico.src="http://openweathermap.org/img/wn/03d@2x.png";
         }
          else if(id>=803 &&id<=804){
-         hum.innerHTML="Cloudy"
+         
         	ico.src="http://openweathermap.org/img/wn/04d@2x.png";
         }
         else if(id<800 && id>=701){
@@ -106,6 +107,7 @@ function weatherDetails(info){
  	  	mytemp.innerHTML=temp;
  	 	 loc.innerHTML=name;
      desc.innerHTML=description;  
+     hum.innerHTML=humidity;
  	  	input.style.display="none";
     	weatherpart.style.display="block";
  	}
