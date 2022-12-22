@@ -11,14 +11,14 @@ let hum=document.querySelector(".hum");
 
 let ico=document.querySelector(".weather-part .image img");
 
-let interval=null;
+
 let api;
 let apiKey=`db58b9838255e2a2f33cd2c75cc09cd8`;
 
 function searchLocation(){
 let location=document.getElementById("location").value;
  	if(location!=""){
- 	 interval=setInterval(requestApi(location),600000);
+ 	 requestApi(location);
   }else{
    infotxt.classList.remove("normal");
  	 infotxt.innerHTML="Please Input...";
@@ -105,7 +105,7 @@ function weatherDetails(info){
      hum.innerHTML=humidity;
  	  	input.style.display="none";
     	weatherpart.style.display="block";
-    //ok
+    
  	}
  	console.log(info);
  }
@@ -115,3 +115,4 @@ function goBackBtn(){
     input.style.display="block";
     location.reload();
 }
+//updates
