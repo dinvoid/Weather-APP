@@ -1,5 +1,5 @@
 let weatherpart=document.querySelector(".weather-part");
-let input=document.querySelector(".input");// for the section input
+let input=document.querySelector(".input");
 let infotxt=document.querySelector(".info-txt");
 let requestButton =document.querySelector(".button");
 
@@ -15,29 +15,25 @@ let interval=null;
 let api;
 let apiKey=`db58b9838255e2a2f33cd2c75cc09cd8`;
 
- function searchLocation(){
- 	let location=document.getElementById("location").value;
+function searchLocation(){
+let location=document.getElementById("location").value;
  	if(location!=""){
- 	//console.log(location);
- 	
- 	  interval=setInterval(requestApi(location),600000);
- }else{
-  infotxt.classList.remove("normal");
- 	infotxt.innerHTML="Please Input...";
-  infotxt.classList.add("error");
- }
- }
+ 	 interval=setInterval(requestApi(location),600000);
+  }else{
+   infotxt.classList.remove("normal");
+ 	 infotxt.innerHTML="Please Input...";
+   infotxt.classList.add("error");
+  }
+  }
 
- function requestApi(city){
- 	
- 	api =`https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=${apiKey}`;
- 	console.log("Requesting to server");
- 	
- 	fetchData();
+function requestApi(city){	
+  	api =`https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=${apiKey}`;
+ 	 console.log("Requesting to server");
+ 	 fetchData();
 }
 
 //f0r getting the device location
- function showmyLocation(){
+function showmyLocation(){
     if(navigator.geolocation){
     navigator.geolocation.getCurrentPosition(onSuccess,onError);
   }
@@ -58,25 +54,25 @@ function onError(error){
    infotxt.innerHTML=error.message;
    infotxt.classList.add("error");
 }
-//f0r getting the device location
+//end f0r getting the device location
 
 
 //for fetching the data
- function fetchData(){
+function fetchData(){
   infotxt.innerHTML="Getting weather details...";
   infotxt.classList.add("normal");
   fetch(api).then(response=>response.json()).then(result=>weatherDetails(result));
 
- }
- function weatherDetails(info){
+}
+function weatherDetails(info){
   	if(info.cod==404){
   		infotxt.innerHTML="Please Enter Valid City";
   		infotxt.classList.remove("normal");
- 	  	infotxt.classList.add("error");	
- 	}else{
- 		const {feels_like,humidity,temp}=info.main;
- 		const name=info.name;
- 		const {description,icon,id}=info.weather[0];
+ 	  infotxt.classList.add("error");	
+   }else{
+ 	 	const {feels_like,humidity,temp}=info.main;
+ 		 const name=info.name;
+ 		 const {description,icon,id}=info.weather[0];
 
         
         if(id==800){
@@ -89,7 +85,7 @@ function onError(error){
         	ico.src="http://openweathermap.org/img/wn/03d@2x.png";
         }
          else if(id>=803 &&id<=804){
-         	hum.innerHTML="Cloudy"
+         hum.innerHTML="Cloudy"
         	ico.src="http://openweathermap.org/img/wn/04d@2x.png";
         }
         else if(id<800 && id>=701){
