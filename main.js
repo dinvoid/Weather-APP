@@ -102,24 +102,15 @@ function weatherDetails(info){
         }
          else if(id<=232 && id>=200){
         	ico.src="http://openweathermap.org/img/wn/11d@2x.png";
-        }
-        
-        
+        }     
  	  	mytemp.innerHTML=temp;
- 	 	  loc.innerHTML=name;
-      desc.innerHTML=description;
-       
+ 	 	 loc.innerHTML=name;
+     desc.innerHTML=description;  
  	  	input.style.display="none";
     	weatherpart.style.display="block";
-
-
-
  	}
-
  	console.log(info);
  }
-
-
 
 function goBackBtn(){
     weatherpart.style.display="none";
