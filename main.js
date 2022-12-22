@@ -102,7 +102,7 @@ function weatherDetails(info){
  	  	mytemp.innerHTML=temp;
  	 	 loc.innerHTML=name;
      desc.innerHTML=description;  
-     hum.innerHTML=humidity;
+     hum.innerHTML="okkay";
  	  	input.style.display="none";
     	weatherpart.style.display="block";
  	}
