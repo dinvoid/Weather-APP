@@ -51,8 +51,8 @@ function onSuccess(position){
 function onError(error){
   console.log(error);
   infotxt.classList.remove("normal");
-   infotxt.innerHTML=error.message;
-   infotxt.classList.add("error");
+  infotxt.innerHTML=error.message;
+  infotxt.classList.add("error");
 }
 //end f0r getting the device location
 
@@ -62,7 +62,6 @@ function fetchData(){
   infotxt.innerHTML="Getting weather details...";
   infotxt.classList.add("normal");
   fetch(api).then(response=>response.json()).then(result=>weatherDetails(result));
-
 }
 function weatherDetails(info){
   	if(info.cod==404){
@@ -72,11 +71,8 @@ function weatherDetails(info){
    }else{
  	 	const {feels_like,humidity,temp}=info.main;
  		 const name=info.name;
- 		 const {description,icon,id}=info.weather[0];
-
-        
-        if(id==800){
-         
+ 		 const {description,icon,id}=info.weather[0];       
+        if(id==800){    
         	ico.src="http://openweathermap.org/img/wn/10d@2x.png";
         }
         else if(id==801){
@@ -85,8 +81,7 @@ function weatherDetails(info){
         else if(id==802){
         	ico.src="http://openweathermap.org/img/wn/03d@2x.png";
         }
-         else if(id>=803 &&id<=804){
-         
+         else if(id>=803 &&id<=804){        
         	ico.src="http://openweathermap.org/img/wn/04d@2x.png";
         }
         else if(id<800 && id>=701){
